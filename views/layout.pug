@@ -1,0 +1,158 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title ChatBot
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='robots', content='all,follow')
+    link(rel='stylesheet', href='https://unpkg.com/botui/build/botui.min.css')
+    link(rel='stylesheet', href='https://unpkg.com/botui/build/botui-theme-default.css')
+    link(rel='stylesheet', href='/vendor/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/vendor/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/fontastic.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700')
+    link(rel='stylesheet', href='/vendor/@fancyapps/fancybox/jquery.fancybox.min.css')
+    link(href='/css/style.css', rel='stylesheet')
+    link#theme-stylesheet(rel='stylesheet', href='/css/style.default.css')
+    link(rel='stylesheet', href='/css/custom.css')
+    script(src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')
+    script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+  body
+    header.header
+      nav.navbar.navbar-expand-lg
+        .search-area
+          .search-area-inner.d-flex.align-items-center.justify-content-center
+            .close-btn
+              i.icon-close
+            .row.d-flex.justify-content-center
+              .col-md-8
+                form(action='#')
+                  .form-group
+                    input#search(type='search', name='search', placeholder='What are you looking for?')
+                    button.submit(type='submit')
+                      i.icon-search-1
+        .container
+          .navbar-header.d-flex.align-items-center.justify-content-between
+            a.navbar-brand(href='index.html') Ask Your Query!
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarcollapse', aria-controls='navbarcollapse', aria-expanded='false', aria-label='Toggle navigation')
+              span
+              span
+              span
+          #navbarcollapse.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto
+              li.nav-item
+                a.nav-link.active(href='/') Home
+              if user
+                li.nav-link(href="#",style='display:none;')
+              else
+                li.nav-item
+                  a.nav-link(href='/users/register/') Get Started
+              if user
+                li.nav-item
+                  a.nav-link(href='/users/logout/') Logout
+              else
+                li.nav-item
+                  a.nav-link(href='/users/login/') Login
+              li.nav-item
+                a.nav-link(href='/users/add')
+                  i.icon-comment
+                  |  Start,Your Chat
+              li.nav-item
+                a.nav-link.active(href='/admins/login') Admin    
+            .navbar-text
+              a.search-btn(href='#')
+                i.icon-search-1
+    .containerss
+      != messages('message', locals)
+      if errors
+        each error, i in errors
+          div(class="alert alert-danger") #{error.msg}
+      block content
+      br
+      hr
+      footer.main-footer
+       .container
+         .row
+          .col-md-4
+            .logo
+              h6.text-white ChatBot.
+            .contact-details
+              p 53 Broadway, Broklyn, NY 11249
+              p Phone: (020) 123 456 789
+              p
+                | Email: 
+                a(href='mailto:info@company.com') Info@Company.com
+              ul.social-menu
+                li.list-inline-item
+                  a(href='#')
+                    i.fa.fa-facebook
+                li.list-inline-item
+                  a(href='#')
+                    i.fa.fa-twitter
+                li.list-inline-item
+                  a(href='#')
+                    i.fa.fa-instagram
+                li.list-inline-item
+                  a(href='#')
+                    i.fa.fa-behance
+                li.list-inline-item
+                  a(href='#')
+                    i.fa.fa-pinterest
+          .col-md-4
+            .menus.d-flex
+              ul.list-unstyled
+                li
+                  a(href='#') My Account
+                li
+                  a(href='#') Add Listing
+                li
+                  a(href='#') Pricing
+                li
+                  a(href='#') Privacy & Policy
+              ul.list-unstyled
+                li
+                  a(href='#') Our Partners
+                li
+                  a(href='#') FAQ
+                li
+                  a(href='#') How It Works
+                li
+                  a(href='#') Contact
+          .col-md-4
+            .menus.d-flex
+              ul.list-unstyled
+                li
+                  a(href='#') My Account
+                li
+                  a(href='#') Add Listing
+                li
+                  a(href='#') Pricing
+                li
+                  a(href='#') Privacy & Policy
+              ul.list-unstyled
+                li
+                  a(href='#') Our Partners
+                li
+                  a(href='#') FAQ
+                li
+                  a(href='#') How It Works
+                li
+                  a(href='#') Contact
+       .copyrights
+        .container
+          .row
+            .col-md-12
+              p © ChatBot, your Learning Assistant.
+    script(src='/vendor/jquery/jquery.min.js')
+    script(src='/vendor/popper.js/umd/popper.min.js')
+    script(src='/vendor/bootstrap/js/bootstrap.min.js')
+    script(src='/vendor/jquery.cookie/jquery.cookie.js')
+    script(src='/vendor/@fancyapps/fancybox/jquery.fancybox.min.js')
+    script(src='/js/front.js')
+    script(src='https://cdn.jsdelivr.net/vue/latest/vue.min.js')
+    script(src='/js/botui.js')
+    script(src='/js/thermostat-bot.js')
+    script(src='https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js')
+    

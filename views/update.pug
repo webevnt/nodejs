@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  main
+      .container
+        section
+          .row
+            .col-md-8
+              .card
+                h4.card-title(style='margin-top: 20px;margin-bottom: 20px;', align='center')
+                  strong Edit User Detail.
+                .card-body.px-lg-5.pt-0
+                  form(method='post', action='/admins/edit/'+message._id, style='color: purple;')
+                    .form-group
+                      label(for='materialRegisterPlotno') Name
+                      input#materialRegisterPlotno.form-control(type='text', value=message.name, name='name', required='true')
+                    .form-group
+                      label(for='materialRegisterHolder') Email
+                      input#materialRegisterName.form-control(type='text', value=message.email, name='email', required='true')
+                    .form-group
+                      label(for='materialRegisterUsername') Username
+                      input#materialRegisterUsername.form-control(type='text', value=message.username, name='username', required='true')
+                    br
+                    input.btn.btn-secondary(type='submit',value='Update') 
+                    br
+                    hr
+                    p
+                      | By clicking
+                      em  UPDATE 
+                      |  you agree to our
+                      a(href='#', target='_blank', style='color: purple')  terms of service
+                      | .

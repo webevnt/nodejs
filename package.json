@@ -1,0 +1,28 @@
+{
+  "name": "nodekb",
+  "version": "1.0.0",
+  "description": "Simple knowledgebase app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Brad Traversy",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "botui": "^0.3.8",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.15.3",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.16.1",
+    "express-validator": "^3.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^4.10.2",
+    "node-nlp": "^3.0.3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-rc.1"
+  }
+}

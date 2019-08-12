@@ -1,0 +1,38 @@
+extends layout
+
+block content
+ .container
+   .row
+    .col-xl-8.offset-xl-2.py-5
+      h3 Register
+      form#contact-form(method='post', action='/users/register', role='form')
+        .controls
+          .row
+            .col-md-6
+              .form-group
+                label(for='form_name') Name
+                input#form_name.form-control(type='text', name='name', placeholder='Please enter your name.')
+          .row
+            .col-md-6
+              .form-group
+                label(for='form_email') Email
+                input#form_email.form-control(type='text', name='email', placeholder='Please enter your email.')
+          .row
+            .col-md-6
+              .form-group
+                label(for='form_uname') Username
+                input#form_uname.form-control(type='text', name='username', placeholder='Please enter your username.')
+          .row
+            .col-md-6
+              .form-group
+                label(for='form_password') Password
+                input#form_uname.form-control(type='password', name='password', placeholder='Please enter your password.')
+          .row
+            .col-md-6
+              .form-group
+                label(for='form_email') Confirm Password 
+                input#form_email.form-control(type='password', name='password2', placeholder='Please Verify your password.')
+          .row
+            .col-md-12
+              input.btn.btn-success.btn-send(type='submit', value='Submit')
+    

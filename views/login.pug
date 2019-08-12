@@ -1,0 +1,24 @@
+extends layout
+
+block content
+ .container
+  .row
+    .col-xl-8.offset-xl-2.py-5
+      h3 Login
+      form(method='post', action='/users/login', role='form')
+        .controls
+          .row
+            .col-md-6
+              .form-group
+                label(for='form_uname') Username
+                input#form_uname.form-control(type='text', name='username', placeholder='Please enter your username.')
+          .row
+            .col-md-6
+              .form-group
+                label(for='form_password') Password
+                input#form_uname.form-control(type='password', name='password', placeholder='Please enter your password.')
+          .row
+            .col-md-12
+              input.btn.btn-success.btn-send(type='submit', value='Submit')
+  
+

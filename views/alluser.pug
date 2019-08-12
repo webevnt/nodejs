@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  main
+      section
+       .container
+          .row
+            .col-md-12
+              table.table.table-sm
+                thead
+                  tr
+                    th
+                      h5
+                        span.badge.badge-pill.black Name
+                    th
+                      h5
+                        span.badge.badge-pill.black Email
+                    th
+                      h5
+                        span.badge.badge-pill.black Username
+                    th
+                      h5
+                        span.badge.badge-pill.black Edit
+                    th
+                      h5
+                        span.badge.badge-pill.black Delete
+                tbody
+                 for result in docsList
+                  tr
+                    td #{result.name}
+                    td #{result.email}
+                    td #{result.username}
+                    td
+                      span.badge.badge-pill.success-color
+                        a(href='/admins/edit/'+result._id)
+                          i.fa.fa-edit.fa-2x(aria-hidden='true')
+                    td
+                      a.btn.btn-success.delete-user(data-id=result._id,href='#') DELETE
+  script(type='text/javascript', src='js/jquery-3.2.1.min.js')
+  script(type='text/javascript', src='js/popper.min.js')
+  script(type='text/javascript', src='js/bootstrap.min.js')
+  script(type='text/javascript', src='js/mdb.min.js')
+  script(type='text/javascript', src='js/main.js')
